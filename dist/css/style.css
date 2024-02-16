@@ -1,3 +1,58 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,regular,italic&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Italiana:regular&display=swap);
+@font-face {
+  font-family: icons;
+  font-display: swap;
+  src: url(../fonts/icons.woff2) format("woff2"),url(../fonts/icons.woff) format("woff");
+  font-weight: 400;
+  font-style: normal
+}
+[class*=_icon-]:before {
+  font-family: icons;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+[class*=_icon-]:before {
+  display: block
+}
+._icon-clock:before {
+  content: "\e900"
+}
+._icon-location:before {
+  content: "\e901"
+}
+._icon-play-fill:before {
+  content: "\e902"
+}
+._icon-s-fb:before {
+  content: "\e903"
+}
+._icon-s-in:before {
+  content: "\e904"
+}
+._icon-s-instagram:before {
+  content: "\e905"
+}
+._icon-slide-arrow:before {
+  content: "\e906"
+}
+._icon-s-medium:before {
+  content: "\e907"
+}
+._icon-s-tiktok:before {
+  content: "\e908"
+}
+._icon-s-tw:before {
+  content: "\e909"
+}
+._icon-s-youtube:before {
+  content: "\e90a"
+}
 * {
   padding: 0;
   margin: 0;
@@ -18,10 +73,10 @@ html {
   min-width: 320px
 }
 body {
-  color: #000;
+  color: #222220;
   line-height: 1;
-  font-family: "";
-  font-size: .875rem;
+  font-family: Montserrat;
+  font-size: 1rem;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -31,7 +86,7 @@ body {
 button,
 input,
 textarea {
-  font-family: "";
+  font-family: Montserrat;
   font-size: inherit;
   line-height: inherit;
   color: inherit;
@@ -90,9 +145,16 @@ h6 {
   min-width: 0
 }
 [class*=__container] {
-  max-width: 75rem;
+  max-width: 100.125rem;
   margin: 0 auto;
   padding: 0 .9375rem
+}
+.button {
+  display: inline-flex;
+  padding: 0 0
+}
+.button--fw {
+  width: 100%
 }
 .ibg {
   width: 100%;
@@ -120,6 +182,16 @@ h6 {
   -o-object-fit: contain;
   object-fit: contain
 }
-.header__container {
-  display: flex
+.block-header__label {
+  line-height: 156.25%;
+  text-transform: capitalize
+}
+.block-header__title {
+  color: #9d875c;
+  text-transform: capitalize;
+  font-family: Italiana;
+  font-size: 3rem
+}
+.block-header__text {
+  line-height: 156.25%
 }

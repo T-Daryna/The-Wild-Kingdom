@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-	@@include('html/_head.htm',{
-	"title":"HomePage"
-	})
-	<body>
-		<div class="wrapper">
-			@@include('html/_header.htm',{})
-			<main class="page">
-			</main>
-			@@include('html/_footer.htm',{})
-		</div>
-		@@include('html/_js.htm',{})
-	</body>
+@@include('html/_head.htm',{
+"title":"HomePage"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<div class="block-header">
+				<div class="block-header__label">About us</div>
+				<h2 class="block-header__title">Treating pet like Royalty</h2>
+				<div class="block-header__text">
+					<p>Treating pet like Royalty</p>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+						Cras aliquam mi id augue ultrices, in tempus elit tristique.
+						Aliquam ultrices sem non.
+					</p>
+				</div>
+				<a href="#" class="block-header__button button">Explore</a>
+			</div>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
 </html>
