@@ -3,6 +3,10 @@
 // Шапка блоку
 
 .block-header {
+    display: grid;
+    gap: toRem(20);
+    justify-items: start;
+
     &__label {
         line-height: 156.25%;
         text-transform: capitalize;
@@ -16,7 +20,12 @@
     }
 
     &__text {
+        display: grid;
+        gap: toRem(20);
         line-height: 156.25%;
+        blockquote {
+            font-style: italic;
+        }
     }
 
     &__button {}
