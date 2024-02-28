@@ -1,3 +1,50 @@
 //====================================================================================================
+.footer {
+    &__container {}
+
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__content {}
+
+    &__menu {}
+
+    &__social {}
+
+    &__logo {
+        justify-self: center;
+        @include adaptiveValue("width", 287, 80)
+    }
+
+    &__subscribe {}
+
+    &__copy {}
+}
+
+.menu-footer {
+    &__title {}
+
+    &__list {}
+
+    &__item {}
+
+    &__link {}
+}
+
+.social {
+    &__item {}
+}
+
+.subscribe {
+    display: grid;
+    justify-items: end;
+    &__title {}
+
+    &__form {}
+
+    &__button {}
+}
 
 //====================================================================================================
