@@ -251,9 +251,6 @@ h6 {
   position: relative;
   z-index: 5
 }
-.header__logo path {
-  fill: #fff
-}
 .menu__list {
   display: flex;
   flex-wrap: wrap;
@@ -279,6 +276,17 @@ h6 {
   font-weight: 300;
   line-height: 152%
 }
+.footer__body {
+  display: grid;
+  grid-template-columns: repeat(3,1fr)
+}
+.footer__logo {
+  justify-self: center
+}
+.subscribe {
+  display: grid;
+  justify-items: end
+}
 @media (min-width:100.125em) {
   .header__container {
     min-height: 9.5rem
@@ -296,12 +304,18 @@ h6 {
     -moz-column-gap: 2.9375rem;
     column-gap: 2.9375rem
   }
+  .footer__logo {
+    width: 17.9375rem
+  }
 }
 @media (max-width:20em) {
   .header__container {
     min-height: 4.375rem
   }
   .header__logo {
+    width: 5rem
+  }
+  .footer__logo {
     width: 5rem
   }
 }
@@ -353,6 +367,11 @@ h6 {
     position: absolute;
     width: 100%;
     height: .125rem;
+    background-color: #c1ab81
+  }
+  .menu-open .icon-menu span,
+  .menu-open .icon-menu::after,
+  .menu-open .icon-menu::before {
     background-color: #fff
   }
   .icon-menu::before {
@@ -381,17 +400,38 @@ h6 {
     gap: 0;
     grid-template-columns: auto 1fr auto auto
   }
+  .menu-open .header__logo path {
+    fill: #fff
+  }
   .menu__body {
     display: grid;
     grid-template-rows: 1fr auto;
+    gap: 1.875rem;
     position: fixed;
     width: 100%;
     height: 100%;
-    left: 0;
+    left: -100%;
     top: 0;
     overflow: auto;
     background-color: #c1ab81;
-    padding: 6.25rem .9375rem 1.875rem .9375rem
+    padding: 6.25rem .9375rem 1.875rem .9375rem;
+    transition: left .3s
+  }
+  .menu__body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: -100%;
+    z-index: 2;
+    background-color: #c1ab81;
+    transition: left .3s
+  }
+  .menu-open .menu__body {
+    left: 0
+  }
+  .menu-open .menu__body::before {
+    left: 0
   }
   .menu__list {
     -webkit-column-gap: .9375rem;
@@ -411,6 +451,9 @@ h6 {
     -moz-column-gap: .9375rem;
     column-gap: .9375rem
   }
+  .action-header {
+    justify-content: center
+  }
   .action-header__link {
     color: #fff
   }
@@ -422,6 +465,11 @@ h6 {
 @media (max-width:47.99875em) and (any-hover:none) {
   .icon-menu {
     cursor: default
+  }
+}
+@media (max-width:47.99875em) and (max-width:20em) {
+  .menu__body::before {
+    height: 4.375rem
   }
 }
 @media (min-width:20em) and (max-width:100.125em) {
@@ -443,6 +491,33 @@ h6 {
   @supports not (width:clamp(5rem ,2.8627145086rem + 10.6864274571vw ,13.5625rem)) {
     .header__logo {
       width: calc(5rem + 8.5625 * (100vw - 20rem)/ 80.125)
+    }
+  }
+  @supports (width:clamp(5rem ,1.7706708268rem + 16.1466458658vw ,17.9375rem)) {
+    .footer__logo {
+      width: clamp(5rem ,1.7706708268rem + 16.1466458658vw ,17.9375rem)
+    }
+  }
+  @supports not (width:clamp(5rem ,1.7706708268rem + 16.1466458658vw ,17.9375rem)) {
+    .footer__logo {
+      width: calc(5rem + 12.9375 * (100vw - 20rem)/ 80.125)
+    }
+  }
+}
+@media (max-width:47.99875em) and (min-width:100.125em) {
+  .menu__body::before {
+    height: 9.5rem
+  }
+}
+@media (max-width:47.99875em) and (min-width:20em) and (max-width:100.125em) {
+  @supports (height:clamp(4.375rem ,3.09574883rem + 6.3962558502vw ,9.5rem)) {
+    .menu__body::before {
+      height: clamp(4.375rem ,3.09574883rem + 6.3962558502vw ,9.5rem)
+    }
+  }
+  @supports not (height:clamp(4.375rem ,3.09574883rem + 6.3962558502vw ,9.5rem)) {
+    .menu__body::before {
+      height: calc(4.375rem + 5.125 * (100vw - 20rem)/ 80.125)
     }
   }
 }
@@ -483,6 +558,12 @@ h6 {
   }
   .button:hover::before {
     opacity: 1
+  }
+  .menu__link:hover {
+    text-decoration: underline
+  }
+  .action-header__link:hover {
+    text-decoration: underline
   }
 }
 .webp .button::before {
